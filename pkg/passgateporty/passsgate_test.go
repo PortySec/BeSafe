@@ -1,8 +1,8 @@
-package passgate
+package passgateporty
 
 import "testing"
 
-func TestPassgate(t *testing.T) {
+func TestPassgatePorty(t *testing.T) {
 
 	tests := []struct {
 		Password string
