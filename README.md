@@ -1,5 +1,5 @@
 Just Run the Startup script and Enjoy - BeSafe ^^
-navigaet to project root directory run the startup.sh
+navigate to the project root directory, and execute the startup.sh
 run ./bin/porty.exe or ./bin/porty
 
 ### Go Commands
