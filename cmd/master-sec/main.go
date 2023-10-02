@@ -11,11 +11,11 @@ func main() {
 		return
 	}
 	arguments := os.Args
-	err := ValidArgsMiddleware(arguments[1], arguments)
-	if err != nil {
-		fmt.Println("Invalid arguments", err)
-		os.Exit(0)
-	}
+	ValidArgsMiddleware(arguments[1], arguments)
+	// if err != nil {
+	// 	fmt.Println("Invalid arguments", err)
+	// 	return
+	// }
 	switch os.Args[1] {
 	case "passguard":
 		PassGuardHandler(arguments)
@@ -25,32 +25,55 @@ func main() {
 		HashmeHandler(arguments)
 	default:
 		fmt.Println("Unknown command")
-		os.Exit(0)
+		return
 	}
 }
 
 func printUsage() {
-	fmt.Println("**************************************")
-	fmt.Println("*                                    *")
-	fmt.Println("*      ╔══════════════════╗          *")
-	fmt.Println("*      ║   Welcome to     ║          *")
-	fmt.Println("*      ║   PortyGuard     ║          *")
-	fmt.Println("*      ║   Your Trusted   ║          *")
-	fmt.Println("*      ║   Security App   ║          *")
-	fmt.Println("*      ║                  ║          *")
-	fmt.Println("*      ╚══════════════════╝          *")
-	fmt.Println("*                                    *")
-	fmt.Println("**************************************")
-	fmt.Println("\nUsage: porty <command> [args]")
-	fmt.Println("Commands:")
-	fmt.Println("=================== PASSGUARD ============================")
-	fmt.Println("\npassguard <password> - Assess the strength of your password")
-	fmt.Println("e.g. porty passguard 1234@abcd")
-	fmt.Println("\n=================== SCANNER ==============================")
-	fmt.Println("\nscanner <host> <port> - Check connectivity to host on given port")
-	fmt.Println("e.g. porty scanner google.com 80")
-	fmt.Println("\n=================== HASHME ===============================")
-	fmt.Println("\nhashme <sha1/sha256/sha512> <plaintext> - Will hash your text based on the selected algorithm")
-	fmt.Println("e.g. porty hashme sha256 helloworld")
+	fmt.Println("============================================")
+	fmt.Println("               PortyGuard")
+	fmt.Println("       Your Trusted Security App")
+	fmt.Println("============================================")
 	fmt.Println()
+	fmt.Println("Usage:")
+	fmt.Println("  porty <command> [options] [args]")
+	fmt.Println()
+	fmt.Println("Commands:")
+
+	fmt.Println("▶ PASSGUARD")
+	fmt.Println("   - Assess the strength of a password.")
+	fmt.Println("     $ porty passguard <password>")
+	fmt.Println("     Example: porty passguard 1234@abcd")
+	fmt.Println()
+
+	fmt.Println("▶ SCANNER")
+	fmt.Println("   - Check connectivity to a host on a specific port.")
+	fmt.Println("     $ porty scanner <host> <port>")
+	fmt.Println("     Example: porty scanner google.com 80")
+	fmt.Println()
+
+	fmt.Println("▶ HASHME")
+	fmt.Println("   - Hash text or file content.")
+	fmt.Println("     Options:")
+	fmt.Println("       -a, --algorithm <algorithm>   Specify the hashing algorithm.")
+	fmt.Println("       -f, --file <filename>         Hash the content of a file.")
+	fmt.Println("       -s, --salt <salt>             Add a salt to the hashing process.")
+	fmt.Println("       -v, --verify <hash>           Verify a hash against the input.")
+	fmt.Println()
+	fmt.Println("     Examples:")
+	fmt.Println("       $ porty hashme -a sha256 helloworld")
+	fmt.Println("       $ porty hashme -a sha256 -f myfile.txt")
+	fmt.Println("       $ porty hashme -a sha256 -s mysalt helloworld")
+	fmt.Println("       $ porty hashme -a sha256 -v <hash> helloworld")
+	fmt.Println()
+
+	fmt.Println("Supported Algorithms for HASHME:")
+	fmt.Println("   • sha1")
+	fmt.Println("   • sha256")
+	fmt.Println("   • sha512")
+	fmt.Println()
+
+	fmt.Println("============================================")
+	fmt.Println("For more details and advanced usage, visit: www.portyguard.com")
+	fmt.Println("============================================")
 }

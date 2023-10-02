@@ -15,16 +15,16 @@ clear
 echo "Compiling tools..."
 
 # Simulating some task being performed
-sleep 2
+# sleep 2
 cd ./cmd/master-sec && go build -o ../../bin/porty.exe
-show_progress 1
-echo "" 
-echo "Testing App..."
-cd ../../pkg
-go test -v ./...
-cd ..
-show_progress 1
-echo ""
-echo "completed!"
+# show_progress 1
+# echo "" 
+# echo "Testing App..."
+# cd ../../pkg
+# go test -v ./...
+# cd ..
+# show_progress 1
+# echo ""
+# echo "completed!"
 ./bin/porty.exe
 
