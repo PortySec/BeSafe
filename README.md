@@ -1,28 +1,83 @@
-Just Run the Startup script and Enjoy - BeSafe ^^
-navigate to the project root directory, and execute the startup.sh
-run ./bin/porty.exe or ./bin/porty
+---
+# BeSafe by PortySec
 
-### Go Commands
+BeSafe is a comprehensive security tool written in Go, designed to assist with various security tasks. Whether you're looking to hash data, scan ports, or validate password strength, BeSafe has got you covered.
 
-Here are some common Go commands along with their descriptions and example usage:
+## Features
 
-| Command         | Description                                           | Example Usage                       |
-| --------------- | ----------------------------------------------------- | ----------------------------------- |
-| `go build`      | Compiles the Go application.                          | `go build`                          |
-| `go run`        | Compiles and runs the Go application.                 | `go run main.go`                    |
-| `go test`       | Runs tests for the Go application.                    | `go test`                           |
-| `go install`    | Installs the Go application as a binary.              | `go install`                        |
-| `go get`        | Downloads and installs Go packages and dependencies.  | `go get github.com/example/package` |
-| `go mod init`   | Initializes a new Go module.                          | `go mod init module-name`           |
-| `go mod tidy`   | Removes any dependencies that are no longer required. | `go mod tidy`                       |
-| `go mod vendor` | Copies dependencies into the local vendor directory.  | `go mod vendor`                     |
-| `go fmt`        | Formats Go source code.                               | `go fmt`                            |
-| `go vet`        | Reports suspicious constructs in Go code.             | `go vet`                            |
-| `go clean`      | Removes object files and cached files.                | `go clean`                          |
-| `go doc`        | Displays documentation for Go packages.               | `go doc package-name`               |
-| `go version`    | Displays the installed Go version.                    | `go version`                        |
+### 1. **PassGuard**
+- **Description**: Assess the strength of a password.
+- **Usage**: 
+  ```
+  porty passguard <password>
+  ```
+  - **Example**: 
+  ```
+  porty passguard 1234@abcd
+  ```
+  - **Output**: 
+  ```
+  Password Is Strong Enough
+  ```
+  or 
+  ```
+  Password must Contain [A-Z,a-z,0-9,chars] and have a length of at least 12
+  ```
 
-Feel free to use these commands in project as needed.
+### 2. **Scanner**
+- **Description**: Check connectivity to a host on a specific port.
+- **Usage**: 
+  ```
+  porty scanner <host> <port>
+  ```
+  - **Example**: 
+  ```
+  porty scanner google.com 80
+  ```
+  - **Output**: 
+  ```
+  Connection has been Successfully established
+  ```
 
-go test
-go test ./...
+### 3. **HashMe**
+- **Description**: Hash text or file content.
+- **Usage**: 
+  ```
+  porty hashme -a <algorithm> [options]
+  ```
+  - **Options**:
+    - `-a, --algorithm <algorithm>`: Specify the hashing algorithm (e.g., sha256, sha512, sha1).
+    - `-f, --file <filename>`: Hash the content of a file.
+  - **Examples**: 
+  ```
+  porty hashme -a sha256 helloworld
+  porty hashme -a sha256 -f myfile.txt
+  ```
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/PortySec/BeSafe.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd BeSafe
+   ```
+3. Build the project:
+   ```
+   go build
+   ```
+
+## Contribution
+
+Feel free to contribute to this project by opening issues or submitting pull requests. All contributions are welcomed!
+
+## License
+
+This project is licensed under the MIT License.
+```
+
+---
+
+You can copy the content between the backticks and paste it into your README.md file on GitHub.
