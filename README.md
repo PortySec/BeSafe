@@ -72,32 +72,19 @@ BeSafe is a comprehensive security tool written in Go, designed to assist with v
 
 Note: If neither `-a` nor `-f` is specified, the input is treated as plain text and hashed using the default `sha256` algorithm.
 
-```
-
 ## Installation
 
 1. Clone the repository:
-
 ```
-
 git clone https://github.com/PortySec/BeSafe.git
-
 ```
-
 2. Navigate to the project directory:
-
 ```
-
 cd BeSafe
-
 ```
-
 3. Build the project:
-
 ```
-
 go build
-
 ```
 
 ## Contribution
