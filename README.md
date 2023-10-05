@@ -69,10 +69,6 @@ BeSafe is a comprehensive security tool written in Go, designed to assist with v
 Note: If neither `-a` nor `-f` is specified, the input is treated as plain text and hashed using the default `sha256` algorithm.
 ```
 
----
-
-You can replace the previous `HashMe` section in the README with this revised version.
-
 ## Installation
 
 1. Clone the repository:
@@ -97,6 +93,3 @@ Feel free to contribute to this project by opening issues or submitting pull req
 This project is licensed under the MIT License.
 ```
 
----
-
-You can copy the content between the backticks and paste it into your README.md file on GitHub.
