@@ -40,19 +40,38 @@ BeSafe is a comprehensive security tool written in Go, designed to assist with v
   ```
 
 ### 3. **HashMe**
-- **Description**: Hash text or file content.
+- **Description**: Hash text or file content using various algorithms with a default of `sha256`.
 - **Usage**: 
   ```
-  porty hashme -a <algorithm> [options]
+  porty hashme [options] <input>
   ```
   - **Options**:
-    - `-a, --algorithm <algorithm>`: Specify the hashing algorithm (e.g., sha256, sha512, sha1).
-    - `-f, --file <filename>`: Hash the content of a file.
+    - `-a, --algorithm <algorithm>`: Specify the hashing algorithm. Available options are `sha256`, `sha512`, and `sha1`. If not specified, `sha256` is used by default.
+    - `-f, --file <filename>`: Hash the content of a file instead of plain text.
   - **Examples**: 
-  ```
-  porty hashme -a sha256 helloworld
-  porty hashme -a sha256 -f myfile.txt
-  ```
+    - Hashing a text with the default algorithm (`sha256`):
+      ```
+      porty hashme helloworld
+      ```
+    - Hashing a text using `sha512`:
+      ```
+      porty hashme -a sha512 helloworld
+      ```
+    - Hashing the content of a file using the default algorithm (`sha256`):
+      ```
+      porty hashme -f myfile.txt
+      ```
+    - Hashing the content of a file using `sha1`:
+      ```
+      porty hashme -a sha1 -f myfile.txt
+      ```
+
+Note: If neither `-a` nor `-f` is specified, the input is treated as plain text and hashed using the default `sha256` algorithm.
+```
+
+---
+
+You can replace the previous `HashMe` section in the README with this revised version.
 
 ## Installation
 
